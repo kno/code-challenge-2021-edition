@@ -1,6 +1,6 @@
 # Billin code challenge 2021 edition
 
-Welcome to the **Billin code challenge 2021 edition**. We look forward to seeing your quality code!!
+Welcome to the **Billin code challenge 2021 edition**. We look forward to reading your quality code!!
 
 Please find below the _instructions_ and the _key points_ for doing the exercise.
 
