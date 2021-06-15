@@ -4,8 +4,10 @@ describe('importer', () => {
   it('should import successfully the import-success file', async () => {
     const importer = new Importer();
     const result = await importer.import('import-success.csv');
+
     expect(result.ok.length).toBe(2);
     expect(result.ko.length).toBe(0);
+
     expect(result.ok[0]).toMatchObject({
       code: 'F001',
       issuedDate: '2021-04-17',
@@ -31,8 +33,10 @@ describe('importer', () => {
   it('should import successfully the import-with-errors file', async () => {
     const importer = new Importer();
     const result = await importer.import('import-with-errors.csv');
+
     expect(result.ok.length).toBe(1);
     expect(result.ko.length).toBe(4);
+
     expect(result.ko[0]).toEqual(
       expect.objectContaining({
         line: 2,

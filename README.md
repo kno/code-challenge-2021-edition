@@ -1,17 +1,28 @@
-# node-typescript-seed-2
+# Billin code challenge 2021 edition
 
-NodeJS Typescript Starter
+Welcome to the **Billin code challenge 2021 edition**. We look forward to seeing your quality code!!
 
-Initial code set up for:
+Please find below the _instructions_ and the _key points_ for doing the exercise.
 
-- typescript compilation
-- testing with code coverage using Jest
-- vscode debugger configured for typescript
+# Instructions
 
-# Usage
+The challenge explanation is very simple, you have to develop an invoice importer. For this purpose you'll find a test file called `importer.test.ts`. You must get it running in green. And this is all.
 
-- Typescript installed locally (not globally) so we use an npm script to run the compiler
-- `npm run tsc -- -w`
+We provide you with the two CSV files you will need to get the tests running. Please see the `files` folder.
+
+In the section **Tests** you will find the instructions to run the tests.
+
+As you can see, the code files are in **Typescript**. If you never have programmed in this language, this is a great opportunity to start. Hey remember that it is just Javascript.
+
+# What we will evaluate in the challenge
+
+- We highly value code **readability**, so please pay close attention to this.
+- The coode should be **well structured**.
+- The code should be **maintainable**.
+- The code should be **extensible**.
+- The code should follow **SOLID** principles.
+- We love very much **Clean Code**.
+- Unit tests are welcome.
 
 # Tests
 
@@ -19,7 +30,3 @@ Initial code set up for:
 - `npm test`
 - Development testing mode (watch all files or a single file)
 - `npm run test:watch`
-- `npm run test -- --coverage false src/demo.test.ts --watch`
-- View the HTML coverage report in a Brave browser (change to suit your browser)
-- `npm run view:coverage`
-- [Blog post helping with Jest setup](https://medium.com/@admin_86118/testing-typescript-node-with-jest-6bf5db18119c)
