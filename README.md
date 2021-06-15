@@ -17,7 +17,7 @@ As you can see, the code files are in **Typescript**. If you never have programm
 # What we will evaluate in the challenge
 
 - We highly value code **readability**, so please pay close attention to this.
-- The coode should be **well structured**.
+- The code should be **well structured**.
 - The code should be **maintainable**.
 - The code should be **extensible**.
 - The code should follow **SOLID** principles.
