@@ -12,7 +12,7 @@ We provide you with the two CSV files you will need to get the tests running. Pl
 
 In the section **Tests** you will find the instructions to run the tests.
 
-As you can see, the code files are in **Typescript**. If you never have programmed in this language, this is a great opportunity to start. Hey remember that it is just Javascript.
+As you can see, the code files are in **Typescript**. If you never have programmed in this language, this is a great opportunity to start. Hey, remember that it is just Javascript.
 
 # What we will evaluate in the challenge
 
