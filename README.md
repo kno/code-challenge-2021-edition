@@ -14,15 +14,7 @@ In the section **Tests** you will find the instructions to run the tests.
 
 As you can see, the code files are in **Typescript**. If you never have programmed in this language, this is a great opportunity to start. Hey, remember that it is just Javascript.
 
-# What we will evaluate in the challenge
-
-- We highly value code **readability**, so please pay close attention to this.
-- The code should be **well structured**.
-- The code should be **maintainable**.
-- The code should be **extensible**.
-- The code should follow **SOLID** principles.
-- We love very much **Clean Code**.
-- Unit tests are welcome.
+Otherwise, you are free to approach the challenge in any way you wish. The only hint we will give you is that the code should be **extensible** and **maintainable**. We highly value code **readability**, so please pay close attention to this.
 
 # Tests
 
