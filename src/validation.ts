@@ -1,7 +1,7 @@
-import { ErrorObject } from 'ajv';
+import { ErrorObject, Schema } from 'ajv';
 import { ErrorInfo } from './types';
 
-export const schema = {
+export const schema: Schema = {
     type: 'object',
     properties: {
       code: { type: 'string', minLength: 1 },
