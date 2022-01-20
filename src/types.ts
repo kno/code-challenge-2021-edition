@@ -1,3 +1,5 @@
+import { ErrorObject } from 'ajv';
+
 export type Record = {
   code: string;
   issuedDate: Date;
@@ -23,3 +25,9 @@ export type importerResult = {
   ok: Record[];
   ko: Error[];
 };
+
+export type FormatErrorFunctionType = (error: ErrorObject) => ErrorInfo;
+export type CasterFunctionType = (
+  value: any,
+  context: any,
+) => number | string | Date;

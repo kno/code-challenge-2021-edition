@@ -2,7 +2,7 @@ import Ajv, { ErrorObject, Schema } from 'ajv';
 import addFormats from 'ajv-formats';
 import { parse } from 'csv-parse';
 import fs from 'fs';
-import { Record, Error, importerResult, ErrorInfo } from './types';
+import { CasterFunctionType, Error, ErrorInfo, FormatErrorFunctionType, importerResult, Record } from './types';
 
 export class GenericImporter {
   ok: Record[] = [];
@@ -16,8 +16,8 @@ export class GenericImporter {
   constructor(
     schema: Schema,
     columns: string[],
-    formatError: (error: ErrorObject) => ErrorInfo,
-    caster: (value: any, context: any) => number | string | Date,
+    formatError: FormatErrorFunctionType,
+    caster: CasterFunctionType,
   ) {
     addFormats(this.ajv);
     this.schema = schema;
