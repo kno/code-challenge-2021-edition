@@ -2,7 +2,7 @@ import Ajv, { ErrorObject, Schema } from 'ajv';
 import addFormats from 'ajv-formats';
 import { parse } from 'csv-parse';
 import fs from 'fs';
-import { CasterFunctionType, Error, ErrorInfo, FormatErrorFunctionType, importerResult, Record } from './types';
+import { CasterFunctionType, Error, ErrorInfo, FormatErrorFunctionType, importerResult, Record } from '../types/types';
 
 export class GenericImporter {
   ok: Record[] = [];

@@ -1,5 +1,5 @@
 import { ErrorObject, Schema } from 'ajv';
-import { ErrorInfo } from './types';
+import { ErrorInfo } from './types/types';
 
 export const schema: Schema = {
     type: 'object',

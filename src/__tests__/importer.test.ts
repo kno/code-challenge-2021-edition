@@ -1,4 +1,4 @@
-import { Importer } from './importer';
+import { Importer } from '../classes/importer';
 
 describe('importer', () => {
   it('should import successfully the import-success file', async () => {
