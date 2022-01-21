@@ -37,9 +37,11 @@ export const schema: Schema = {
   ];
 
   export const formatError = (error: ErrorObject): ErrorInfo => {
+    const requiredErrors = ['minLength'];
+    const message = requiredErrors.includes(error.keyword) ? 'required' : 'invalid';
     return {
       property: error?.instancePath?.substring(1) || '',
-      message: error?.message?.includes('characters') ? 'required' : 'invalid',
+      message: message,
     };
   };
 
