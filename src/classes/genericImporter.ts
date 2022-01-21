@@ -2,7 +2,14 @@ import Ajv, { ErrorObject, Schema } from 'ajv';
 import addFormats from 'ajv-formats';
 import { parse } from 'csv-parse';
 import fs from 'fs';
-import { CasterFunctionType, Error, ErrorInfo, FormatErrorFunctionType, importerResult, Record } from '../types/types';
+import {
+  CasterFunctionType,
+  Error,
+  ErrorInfo,
+  FormatErrorFunctionType,
+  importerResult,
+  Record,
+} from '../types/types';
 
 export class GenericImporter {
   ok: Record[] = [];
@@ -12,6 +19,7 @@ export class GenericImporter {
   columns: string[];
   formatError: (error: ErrorObject) => ErrorInfo;
   caster: (value: any, context: any) => number | string | Date;
+  validate: any;
 
   constructor(
     schema: Schema,
@@ -24,6 +32,18 @@ export class GenericImporter {
     this.columns = columns;
     this.formatError = formatError;
     this.caster = caster;
+    this.validate = this.ajv.compile<Record>(this.schema);
+  }
+
+  clasifyRecord(record: Record, line: number): void {
+    if (this.validate(record)) {
+      this.ok.push(record);
+    } else {
+      this.ko.push({
+        line: line,
+        errors: this.validate.errors?.map(this.formatError) || [],
+      });
+    }
   }
 
   async import(filePath: string): Promise<importerResult> {
@@ -37,20 +57,11 @@ export class GenericImporter {
       });
       fs.createReadStream(`files/${filePath}`).pipe(parser);
       let line = 0;
-      const validate = this.ajv.compile(this.schema);
       parser.on('readable', () => {
         let record;
         while ((record = parser.read()) !== null) {
           line++;
-          const valid = validate(record);
-          if (valid) {
-            this.ok.push(record);
-          } else {
-            this.ko.push({
-              line: line,
-              errors: validate.errors?.map(this.formatError) || [],
-            });
-          }
+          this.clasifyRecord(record, line);
         }
       });
       parser.on('end', () => {
